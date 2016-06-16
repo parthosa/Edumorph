@@ -31,6 +31,7 @@ class Student(models.Model):
 		#('shit', 'shit'),
 		#to be updated
 		)
+	user = models.OneToOneField(User, null=True)
 	st_name = models.CharField(max_length = 100, is_required=True)
 	st_dob = models.DateField(default=date.now, is_required=True)
 	st_city_res = models.CharField(max_length = 20, is_required=True)

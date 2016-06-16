@@ -142,3 +142,35 @@ def sc_dashboard_roll(request):
 	#			'message' = Click the link below to download the roll numbers
 	#}
  	return JsonResponse(response)
+
+def sc_edit(request):
+	if request.method == 'POST':
+		sc_add = request.POST['sc_add']
+		sc_city = request.POST['sc_city']
+		sc_state = request.POST['sc_state']
+		sc_email = request.POST['sc_email']
+		sc_no = request.POST['sc_no']
+		sc_princi = request.POST['sc_princi']
+		sc_auth = request.POST['sc_auth']
+		#I guess it would be good to add a separate link for changing password
+
+	try:
+		member = School()
+		member.sc_add = sc_add
+		member.sc_city = sc_city
+		member.sc_email = sc_email
+		member.sc_no = sc_no
+		member.sc_princi = sc_princi
+		member.sc_auth = sc_auth
+		member.save()
+
+		response = {'status': 1,
+					'message': Your information was saved successfully,
+		}
+
+	except:
+		response = {'status': 0,
+					'message': error
+		}
+
+	return JsonResponse(response)	

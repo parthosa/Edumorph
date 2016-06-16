@@ -1,32 +1,31 @@
+from __future__ import unicode_literals
 from django.db import models
+from django.contrib.auth.models import User
 
 class School(models.Model):
-	city=(
-		('Delhi', 'Delhi'),
-		#('shit', 'shit'),
-		#to be updated
-		)
-	state=(
-		('Delhi', 'Delhi'),
-		#('shit', 'shit'),
-		#to be updated
-		)
-	sc_name = models.CharField(max_length = 100, is_required=True)
-	sc_add = models.CharField(max_length=500, is_required=True)
-	sc_city = models.ChoiceField(choices=city, is_required=True)
-	sc_state = models.ChoiceField(choices=state, is_required=True)
-	sc_email = models.EmailField(max_length=50, is_required=True)
-	sc_no = models.IntegerField(is_required=True)
-	sc_princi = models.CharField(max_length=50, is_required=True)
-	sc_auth = models.CharField(max_length=50, is_required=True)
-	is_paid = models.BooleanField(default=False)
-	enroll_sheet = models.FileField(#path to be written)
-
-	def __str__(self):
-			return self.sc_name
+		city=(
+			('Delhi', 'Delhi'),
+			#('shit', 'shit'),
+			#to be updated
+			)
+		state=(
+			('Delhi', 'Delhi'),
+			#('shit', 'shit'),
+			#to be updated
+			)
+		user = models.OneToOneField(User, null=True)
+		sc_name = models.CharField(max_length = 100, is_required=True)
+		sc_add = models.CharField(max_length=500, is_required=True)
+		sc_city = models.ChoiceField(choices=city, is_required=True)
+		sc_state = models.ChoiceField(choices=state, is_required=True)
+		sc_email = models.EmailField(max_length=50, is_required=True)
+		sc_no = models.IntegerField(is_required=True)
+		sc_princi = models.CharField(max_length=50, is_required=True)
+		sc_auth = models.CharField(max_length=50, is_required=True)
+		is_paid = models.BooleanField(default=False)
+		enroll_sheet = models.FileField(#path to be written)
 
 class Student(models.Model):
-	s School(models.Model):
 	city=(
 		('Delhi', 'Delhi'),
 		#('shit', 'shit'),

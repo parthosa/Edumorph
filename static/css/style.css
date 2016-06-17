@@ -15,6 +15,12 @@
 body{
   background: #03a9f4;
 }
+
+html,body{
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
 /*#login .row{
   border-right: 1px solid #3175af;
   padding-right: 20px;
@@ -50,3 +56,40 @@ body{
   margin: 5vh auto;
   display: block;
 }
+
+
+.sideBar{
+  position: sticky;
+  height: 80vh;
+  padding-right: 0 !important;
+    padding-left: 0 !important;
+    text-align: center;
+    color:black !important;
+}
+
+
+.sideBar .thumbnail{
+  border:none;
+}
+
+.sideBar .nav>li>a{
+  text-align: left;
+}
+
+.sideBar i{
+  font-size: 20px;
+}
+
+
+@media screen and (min-width:768px){
+  .sideBar .nav>li>a{
+    padding: 12px 44px;
+  }
+}
+.sideBar{
+    height: 80vh;
+  }
+
+  .infoBox .page-header{
+    margin: 0px 0 20px !important;
+  }

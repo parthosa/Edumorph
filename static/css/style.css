@@ -1,0 +1,52 @@
+
+
+.navbar-brand img{
+  width: 110px;
+}
+
+.navbar .navbar-brand{
+  height: 13vh;
+}
+
+.navbar{
+  background-color: white  !important;
+}
+
+body{
+  background: #03a9f4;
+}
+/*#login .row{
+  border-right: 1px solid #3175af;
+  padding-right: 20px;
+}
+
+
+#others .row{
+  padding-left:20px;
+}*/
+
+
+/*#others .row img{
+  width: 300px;
+}*/
+
+
+#others{
+
+}
+
+#register{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 15vh;
+  /*padding-bottom: 15px;*/
+}
+
+.hbar{
+  width:80%;
+  height: 2px;
+  background: #03a9f4;
+  margin: 5vh auto;
+  display: block;
+}

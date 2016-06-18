@@ -82,6 +82,29 @@ def reg_st(request):
 
 	#algo for username and psswd to be written
 
+	def gen_username(request):
+		c_code = int(member.sc_city) 
+		d = []
+		today = datetime.date.today()
+		d.append(today)
+		year = d[0]
+		r_year = year[2:]
+		s_id = str(member.id)
+		u_name = "EM" + r_year + c_code + s_id
+
+		return(u_name)
+
+	def gen_psswd(request):
+		psswd = str(member.sc_no)	
+
+		return(psswd)
+
+	def create_user(request):
+		user = School.objects.create_user(username=u_name, password=psswd, email_id=member.email_id)	
+		member.user = user
+		member.save()
+		return user
+
 	body = unicode(u'''
 		Hi whatever to be filled here to be done by the team
 

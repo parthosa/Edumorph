@@ -197,3 +197,24 @@ def sc_edit(request):
 		}
 
 	return JsonResponse(response)	
+
+###########################################Payment Gateway###########################################################################
+from paypal.standard.ipn import PayPalPaymentsForm
+
+def main_pay(request):
+
+    paypal_dict = {
+        "business": #paypal id,
+        "amount": #to be asked,
+        "item_name": "Registration with Edumorph",
+        "invoice": "unique-invoice-id",
+        "notify_url": "https://www.example.com" + reverse('paypal-ipn'),
+        "return_url": "https://www.edumorph.com/thank_you/",
+        "cancel_return": "https://www.edumorph.com/oops/",
+        "callback_timeout": "3",
+        "custom": "Upgrade all users!",  # Custom command to correlate to some function later (optional)
+    }
+
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    context = {"form": form}
+    return render(request, "payment.html", context)

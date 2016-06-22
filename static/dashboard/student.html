@@ -1,0 +1,198 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Personalised Test Assessment</title>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-material-design.css">
+  <link rel="stylesheet" href="../css/ripples.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/jquery.dropdown.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/material.min.js"></script>
+  <script src="../js/ripples.min.js"></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-fixed-up">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://www.edumorf.com">
+          <img alt="Brand" src="../img/logo.png" />
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <p class="navbar-btn">
+            <a href="../login.html" class="btn btn-info btn-raised">Logout</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col-xs-2" >
+      <div class="container-fluid" style="width:100%;padding:0">
+      <div class="well sideBar">
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3">
+            <a href="#" class="thumbnail">
+              <i class="material-icons">person</i>
+            </a>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-xs-12">
+        <ul class="nav nav-list" style="max-width: 300px;">
+          <li  ><a href="#"><span style="margin-right:15px"><i class="material-icons">home</i></span><span class="hidden-xs" style="text-align:left">Home</span></a></li>
+          <li ><a href="#"><span style="margin-right:15px"><i class="material-icons">person</i></span><span class="hidden-xs"  style="text-align:left">Profile</span></a> </li>
+          <li  class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+            <span style="margin-right:15px"><i class="material-icons">event_note</i> </span> <span class="hidden-xs" style="text-align:left">Practice</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Sample Practice Papers</a></li>
+              <li><a href="#">Psychology Test</a></li>
+              <li><a href="#">Aptitude </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      </div>
+      </div>
+    </div>
+    </div>
+<div class="col-xs-10">
+    <div class="row">
+      <div class="container-fluid">
+      <div class="col-md-10 ">
+        <div class="well">
+          <h4>Dashboard</h4>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="container-fluid">
+    <div class="col-md-5 infoBox">
+      <div class="well">
+        <div class="container-fluid">
+          <div class="row">
+      <div class="page-header">
+        <h4>Basic Info <span style="float:right"><i class="material-icons">mode_edit</i></span></h4>
+
+      </div>
+    </div>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-1 ">
+          <h5><strong>Name</strong></h5>
+        </div>
+        <div class="col-xs-8 col-xs-offset-1">
+          <h5 id="name">Rahul Singh</h5>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-1 ">
+          <h5><strong>Birthday</strong></h5>
+        </div>
+        <div class="col-xs-8 col-xs-offset-1">
+          <h5 id="bday">16/06/1996</h5>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-1 ">
+          <h5 ><strong>City</strong></h5>
+        </div>
+        <div class="col-xs-8 col-xs-offset-1">
+          <h5 id="city">New Delhi</h5>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-1 ">
+          <h5><strong>School</strong></h5>
+        </div>
+        <div class="col-xs-8 col-xs-offset-1">
+          <h5 id="school">Hans Raj Model</h5>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-1 ">
+          <h5><strong>Email</strong></h5>
+        </div>
+        <div class="col-xs-8 col-xs-offset-1">
+          <h5 id="email">rahulsingh@gmail.com</h5>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-5  infoBox">
+    <div class="well">
+      <div class="container-fluid">
+        <div class="row">
+    <div class="page-header">
+      <h4>Summary</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-1 ">
+    <h5>Number of Tests Given</h5>
+  </div>
+  <div class="col-xs-2 col-xs-offset-1">
+    <h5 id="testNo"><strong>3</strong></h5>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-1 ">
+    <h5>Number of Practice Tests Given</h5>
+  </div>
+  <div class="col-xs-2 col-xs-offset-1">
+    <h5 id="pTestNo"><strong>5</strong></h5>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-1 ">
+    <h5>Best Rank</h5>
+  </div>
+  <div class="col-xs-2 col-xs-offset-1">
+    <h5 id="bestRank"><strong>34</strong></h5>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-1 ">
+    <h5>Best State Rank</h5>
+  </div>
+  <div class="col-xs-2 col-xs-offset-1">
+    <h5 id="bestStateRank"><strong>4</strong></h5>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-1 ">
+    <h5>Best Score</h5>
+  </div>
+  <div class="col-xs-2 col-xs-offset-1">
+    <h5 id="pBestScore"><strong>289</strong></h5>
+  </div>
+  </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+</div>
+</div>
+</body>
+</html>

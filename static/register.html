@@ -47,7 +47,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-2" for="name"> Name</label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" id="name">
+                      <input type="text" class="form-control" id="name" required>
                       <p class="help-block">You need to climb aboard with a name</p>
                     </div>
                   </div>
@@ -59,16 +59,16 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="control-label col-md-2" for="city">City</label>
+                    <label class="control-label col-md-2" for="city" >City</label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" id="city"  >
+                      <input type="text" class="form-control" id="city" required >
                       <p class="help-block">Where do you hail from?</p>
                     </div>
                   </div>
                   <div class="form-group">
                     <label  class="control-label col-md-2" for="school">School</label>
                     <div class="col-md-10">
-                      <select id="school" class="select form-control" data-dynamic-opts=true>
+                      <select id="school" class="select form-control" data-dynamic-opts=true required>
                         <option value="Apple fritter">Apple fritter</option>
                         <option value="Croissant">Croissant</option>
                         <option value="Donut">Donut</option>
@@ -85,7 +85,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-2" for="email"> Email</label>
                     <div class="col-md-10">
-                      <input type="email" class="form-control" id="email">
+                      <input type="email" class="form-control" id="email" required>
                       <p class="help-block">That is where we will send your pigeons</p>
                     </div>
                   </div>
@@ -93,7 +93,7 @@
                     <label for="profilePic" class="col-md-2 control-label">Profile Picture</label>
                     <div class="col-md-10">
                       <input type="text" readonly="" class="form-control" placeholder="Browse...">
-                      <input type="file" id="profilePic">
+                      <input type="file" id="profilePic" accept="image/*">
                     </div>
                   </div>
                   <div class="form-group">

@@ -67,6 +67,13 @@ html,body{
     color:black !important;
 }
 
+.sideBar a{
+  color: black !important;
+}
+
+.sideBar a:active{
+  color: white !important;
+}
 
 .sideBar .thumbnail{
   border:none;
@@ -78,6 +85,11 @@ html,body{
 
 .sideBar i{
   font-size: 20px;
+}
+
+.thumbnail i{
+  font-size: 5em;
+color: black;
 }
 
 

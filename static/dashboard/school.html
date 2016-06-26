@@ -4,17 +4,16 @@
   <title>Dashboard | Personalised Test Assessment</title>
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
-
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/bootstrap-material-design.css">
   <link rel="stylesheet" href="../css/ripples.min.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/jquery.dropdown.css">
+  <script src="../js/jquery-2.2.4.min.js"></script>
+  <script src="../js/actions_school.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/material.min.js"></script>
   <script src="../js/ripples.min.js"></script>
-  <script src="../js/actions.js"></script>
-  <script src="../js/jquery-3.0.0.min.js"></script>
 
 </head>
 <body>
@@ -72,9 +71,7 @@
             </div>
           </div>
         </div>
-
       </div>
-
       <div class="row">
         <div class="container-fluid">
           <div class="col-md-5 infoBox main">
@@ -83,185 +80,88 @@
                 <div class="row">
                   <div class="page-header">
                     <h4>Basic Info <span style="float:right"><i class="material-icons edit">mode_edit</i></span></h4>
-
                   </div>
                 </div>
                 <div class="row mainBox">
-
-                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="col-md-5  infoBox side">
-              <div class="well">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="page-header">
-                      <h4>Summary</h4>
-                    </div>
+          </div>
+          <div class="col-md-5  infoBox side">
+            <div class="well">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="page-header">
+                    <h4>Summary</h4>
                   </div>
-                  <div class="row">
-                    <div class="col-xs-8 col-xs-offset-1 ">
-                      <h5>Number of Students Registered</h5>
-                    </div>
-                    <div class="col-xs-2 col-xs-offset-1">
-                      <h5 id="testNo"><strong>35</strong></h5>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Students Registered</h5>
                   </div>
-                  <div class="row">
-                    <div class="col-xs-8 col-xs-offset-1 ">
-                      <h5>Class with highest number of student</h5>
-                    </div>
-                    <div class="col-xs-2 col-xs-offset-1">
-                      <h5 id="pTestNo"><strong>5</strong></h5>
-                    </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="totalStudent"><strong>35</strong></h5>
                   </div>
-                  <div class="row">
-                    <div class="col-xs-8 col-xs-offset-1 ">
-                      <h5>Best Rank</h5>
-                    </div>
-                    <div class="col-xs-2 col-xs-offset-1">
-                      <h5 id="bestRank"><strong>34</strong></h5>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Students (Payment not recieved)</h5>
                   </div>
-                  <div class="row">
-                    <div class="col-xs-8 col-xs-offset-1 ">
-                      <h5>Best State Rank</h5>
-                    </div>
-                    <div class="col-xs-2 col-xs-offset-1">
-                      <h5 id="bestStateRank"><strong>4</strong></h5>
-                    </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="unpaidStudent"><strong>35</strong></h5>
                   </div>
-                  <div class="row">
-                    <div class="col-xs-8 col-xs-offset-1 ">
-                      <h5>Best Score</h5>
-                    </div>
-                    <div class="col-xs-2 col-xs-offset-1">
-                      <h5 id="pBestScore"><strong>289</strong></h5>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Amount per student</h5>
                   </div>
-
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="amtperstudent"><strong>5</strong></h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Other Charges</h5>
+                  </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="otherCharges"><strong>34</strong></h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Total Amount</h5>
+                  </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="totalAmt"><strong>34</strong></h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Amount paid</h5>
+                  </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="paidAmt"><strong>4</strong></h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Amount Due</h5>
+                  </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="dueAmt"><strong>289</strong></h5>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
-    <script>
-
-    var detailFields=['Name','Address','City','State','Email','Contact','Principal','Concerned Authority'];
-    //detailValue
-
-    var statusFields=[
-      'School Registered',
-      'Enrollment sheet Uploaded',
-      'Enrollment sheet Acknowledged',
-      'Payment Accepted',
-      'Roll numbers Generated',
-      'Examination Conducted'
-    ];
-
-    var statusValue = [true,false,false,false,false,false];
-
-    var rollNosAvail = true;
-    //rollNosSheet
-
-    var resultAvail = true;
-    //resultSheet
-
-    $('ul li:not(#home)').click(function() {
-      $('.side,.head').fadeOut();
-      $('.main').removeClass('col-md-5');
-      $('.main').addClass('col-md-10');
-      $('.mainBox').empty();
-      // $('.main').fadeIn();
-      // loader();
-      // setTimeout($('.mainBox').empty(),2000);
-    });
-
-    $('#home').click(function(){
-      $('.main').removeClass('col-md-10');
-      $('.main').addClass('col-md-5');
-      $('.side,.head').fadeIn();
-      $('.mainBox').empty();
-      $('.main .page-header h4').html('Basic Info <span style="float:right"><i class="material-icons edit">mode_edit</i></span>');
-      for(i=0;i<detailFields.length-2;i++){
-        var baseEle="<div class='row detail'><div class='col-xs-2 col-xs-offset-1'> <h5><strong>"+detailFields[i]+"</strong></h5> </div> <div class='col-xs-8 col-xs-offset-1 '> <h5 id="+detailFields[i].toLowerCase().replace(" ","_")+">value</h5> </div></div>";
-        $('.mainBox').append(baseEle);
-      }
-
-    });
+  </div>
+  <script>
+  // console.log(pay);
 
 
-    $('#details').click(function(){
-      $('.main .page-header h4').html('Info<span style="float:right"><i class="material-icons edit">mode_edit</i></span>');
-      for(i=0;i<detailFields.length;i++){
-        var baseEle="<div class='row detail'><div class='col-xs-2 col-xs-offset-1 col-md-offset-3'> <h5><strong>"+detailFields[i]+"</strong></h5> </div> <div class='col-xs-8 col-xs-offset-1 col-md-6'> <h5 id="+detailFields[i].toLowerCase().replace(" ","_")+">value</h5> </div></div>";
-        $('.mainBox').append(baseEle);
-      }
-    });
-
-    $('#enroll').click(function(){
-      $('.main .page-header h4').html('Enrollment Sheet');
-      $('.mainBox').append("<div class='row center-block' style='margin-top:1em'> <div class='col-xs-8 col-xs-offset-1 col-md-5 col-md-offset-0 text-center' > <a href='#' class='btn btn-sup btn-raised btn-sm'> <i class='material-icons'>file_download</i> <span>DOWNLOAD</span> </a> </div> <div class='col-xs-8 col-xs-offset-2 col-md-5 col-md-offset-1 text-center'><h6 class='text-danger'>*Fill the rows exactly in the format shown below. Do not modify the columns headers</h6></div> </div>");
-      $('.mainBox').append("<div class='row center-block' style='margin-top:1em'> <div class='col-xs-8 col-xs-offset-1 col-md-5 col-md-offset-0 text-center' > <a href='#' class='btn btn-sup btn-raised btn-sm'> <i class='material-icons'>file_upload</i> <span>UPLOAD</span> </a> </div> <div class='col-xs-8 col-xs-offset-2 col-md-5 col-md-offset-1 text-center'><h6 class='text-danger'>*You can have multiple uploads before the deadline</h6></div> </div>");
-      $('.mainBox').append("<div class='row center-block text-center' style='margin:6vh 0'><div class='col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 text-center'><div class='page-header'></div><h3>Sample</h3></div><div class='col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center' style='margin-top:3vh'><img src='../img/table3.png' class='img-responsive'/></div></div>");
-    });
-
-    $('#payment').click(function(){
-      $('.main .page-header h4').html('Payment');
-    });
-
-    $('#status').click(function(){
-      $('.main .page-header h4').html('Status');
-      for(i=0;i<statusFields.length;i++){
-        value = statusValue[i] ? "check" : "close" ;
-        type = statusValue[i]? "success":"danger";
-        var baseEle="<div class='row detail'><div class='col-xs-5 col-xs-offset-1 col-md-4 col-md-offset-2'> <h5><strong>"+statusFields[i]+"</strong></h5> </div> <div class='col-xs-2 col-xs-offset-1 col-md-3 col-md-offset-1 text-center'> <h5 id="+statusFields[i].toLowerCase().replace(" ","_")+"><i class='material-icons text-"+type+"' style='font-weight:bold'>"+value+"</i></h5> </div></div>";
-        $('.mainBox').append(baseEle);
-      }
-    });
-
-    $('#downloads').click(function(){
-      $('.main .page-header h4').html('Downloads');
-      if(rollNosAvail)
-        content="<a href='#' class='btn btn-sup btn-raised btn-sm'> <i class='material-icons'>file_download</i> <span>DOWNLOAD</span> </a>";
-      else
-        content="<div class='alert alert-danger' style='color:white;margin-bottom:15px'><button type='button' class='close' >×</button>Please be patient till we finish the procedures </div>";
-      $('.mainBox').append("<div class='row center-block' style='margin-top:1em;display: flex;justify-content: center;align-items: center;'><div class='col-xs-8 col-md-5 col-md-offset-1 text-center'><h5>Download the Roll Numbers sheet</h5></div>  <div class='col-xs-8 col-md-5 col-md-offset-0 text-center' > "+content+" </div> </div>");
-    });
-
-    $('#results').click(function(){
-      $('.main .page-header h4').html('Results');
-      if(resultAvail)
-        content="<a href='#' class='btn btn-sup btn-raised btn-sm'> <i class='material-icons'>file_download</i> <span>DOWNLOAD</span> </a>";
-      else
-        content="<div class='alert alert-danger' style='color:white;margin-bottom:15px'><button type='button' class='close' >×</button>Please be patient our experts are still mining through best of our resourses </div>";
-      $('.mainBox').append("<div class='row center-block' style='margin-top:1em;display: flex;justify-content: center;align-items: center;'><div class='col-xs-8 col-md-5 col-md-offset-1 text-center'><h5>Download Results</h5></div>  <div class='col-xs-8 col-md-5 col-md-offset-0 text-center' > "+content+" </div> </div>");
-    });
-
-
-    $(document).on('click','.edit',function(){
-      $('.side,.head').fadeOut();
-      $('.main').removeClass('col-md-5');
-      $('.main').addClass('col-md-10');
-      $('.mainBox').empty();
-      $('.main .page-header h4').html('Edit Details');
-      console.log('hi');
-      //call to get previous details
-      $('.mainBox').append("  <div class='row'> <div class='col-md-8 col-md-offset-2'> <form role='form' class='form-horizontal'> <fieldset> <div class='form-group'> <label class='control-label col-md-2' for='address'>Address</label> <div class='col-md-10'> <textarea  class='form-control' id='address' row='4' required /> </div> </div> <div class='form-group'> <label class='control-label col-md-2' for='email'> Email</label> <div class='col-md-10'> <input type='email' class='form-control' id='email' required> </div> </div> <div class='form-group'> <label class='control-label col-md-2' for='contact'> Contact</label> <div class='col-md-10'> <input type='text' class='form-control' id='contact' required> </div> </div> <div class='form-group'> <label class='control-label col-md-2' for='concerned_authority' >Concerned Authority</label> <div class='col-md-10'> <input type='text' class='form-control' id='concerned_authority'required > </div> </div> <div class='form-group'> <label class='control-label col-md-2' for='password'> Password</label> <div class='col-md-10'> <input type='password' class='form-control' id='password' required> </div> </div> <div class='form-group'> <label class='control-label col-md-2' for='confpassword'> Confirm Password</label> <div class='col-md-10'> <input type='password' class='form-control' id='confpassword' required> </div> </div> <div class='form-group'> <div class='col-md-8 col-md-offset-2 text-center'> <button type='submit' class='btn btn-info btn-raised'>Save</button> </div> </div> </fieldset> </form> </div> </div>");
-      $.material.init();
-    });
-
-    function loader() {
-      spinner="<div class='spinnerWrap col-xs-10 col-xs-offset-1'><svg class='spinner' width='50px' height='50px' viewBox='0 0 66 66' xmlns='http://www.w3.org/2000/svg'><circle class='circle' fill='none' stroke-width='3' stroke-linecap='round' cx='33' cy='33' r='30'></circle></svg></div>";
-      $('.mainBox').append(spinner);
-    };
-
-    </script>
-  </body>
-  </html>
+  </script>
+</body>
+</html>

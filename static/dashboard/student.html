@@ -4,6 +4,7 @@
   <title>Dashboard | Personalised Test Assessment</title>
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="../js/jquery-2.2.4.min.js"></script>
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/bootstrap-material-design.css">
   <link rel="stylesheet" href="../css/ripples.min.css">
@@ -12,8 +13,7 @@
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/material.min.js"></script>
   <script src="../js/ripples.min.js"></script>
-  <script src="../js/jquery-3.0.0.min.js"></script>
-  
+
 
 </head>
 <body>
@@ -37,160 +37,218 @@
   <div class="row">
     <div class="col-xs-2" >
       <div class="container-fluid" style="width:100%;padding:0">
-      <div class="well sideBar">
-        <div class="row">
-          <div class="col-xs-6 col-xs-offset-3">
-            <a href="#" class="thumbnail">
-              <i class="material-icons">person</i>
-            </a>
+        <div class="well sideBar">
+          <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+              <a href="#" class="thumbnail">
+                <i class="material-icons">person</i>
+              </a>
+            </div>
+          </div>
+          <hr/>
+          <div class="row">
+            <div class="col-xs-12">
+              <ul class="nav nav-list" style="max-width: 300px;">
+                <li id="home"><a href="#"><span style="margin-right:15px"><i class="material-icons">home</i></span><span class="hidden-xs" style="text-align:left">Home</span></a></li>
+                <li id="profile"><a href="#"><span style="margin-right:15px"><i class="material-icons">person</i></span><span class="hidden-xs"  style="text-align:left">Profile</span></a> </li>
+                <li id="practice" class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+                    <span style="margin-right:15px"><i class="material-icons">event_note</i> </span> <span class="hidden-xs" style="text-align:left">Practice</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li id="samplePractice"><a href="#">Sample Practice Papers</a></li>
+                    <li id="psychology"><a href="#">Psychology Test</a></li>
+                    <li id="aptitude"><a href="#">Aptitude </a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <hr/>
-        <div class="row">
-          <div class="col-xs-12">
-        <ul class="nav nav-list" style="max-width: 300px;">
-          <li  ><a href="#"><span style="margin-right:15px"><i class="material-icons">home</i></span><span class="hidden-xs" style="text-align:left">Home</span></a></li>
-          <li ><a href="#"><span style="margin-right:15px"><i class="material-icons">person</i></span><span class="hidden-xs"  style="text-align:left">Profile</span></a> </li>
-          <li  class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
-            <span style="margin-right:15px"><i class="material-icons">event_note</i> </span> <span class="hidden-xs" style="text-align:left">Practice</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Sample Practice Papers</a></li>
-              <li><a href="#">Psychology Test</a></li>
-              <li><a href="#">Aptitude </a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      </div>
       </div>
     </div>
-    </div>
-<div class="col-xs-10">
-    <div class="row">
-      <div class="container-fluid">
-      <div class="col-md-10 ">
-        <div class="well">
-          <h4>Dashboard</h4>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="container-fluid">
-    <div class="col-md-5 infoBox">
-      <div class="well">
+    <div class="col-xs-10">
+      <div class="row head">
         <div class="container-fluid">
-          <div class="row">
-      <div class="page-header">
-        <h4>Basic Info <span style="float:right"><i class="material-icons">mode_edit</i></span></h4>
-
-      </div>
-    </div>
-        <div class="row">
-          <div class="col-xs-2 col-xs-offset-1 ">
-          <h5><strong>Name</strong></h5>
-        </div>
-        <div class="col-xs-8 col-xs-offset-1">
-          <h5 id="name">Rahul Singh</h5>
-        </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-2 col-xs-offset-1 ">
-          <h5><strong>Birthday</strong></h5>
-        </div>
-        <div class="col-xs-8 col-xs-offset-1">
-          <h5 id="bday">16/06/1996</h5>
-        </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-2 col-xs-offset-1 ">
-          <h5 ><strong>City</strong></h5>
-        </div>
-        <div class="col-xs-8 col-xs-offset-1">
-          <h5 id="city">New Delhi</h5>
-        </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-2 col-xs-offset-1 ">
-          <h5><strong>School</strong></h5>
-        </div>
-        <div class="col-xs-8 col-xs-offset-1">
-          <h5 id="school">Hans Raj Model</h5>
-        </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-2 col-xs-offset-1 ">
-          <h5><strong>Email</strong></h5>
-        </div>
-        <div class="col-xs-8 col-xs-offset-1">
-          <h5 id="email">rahulsingh@gmail.com</h5>
-        </div>
+          <div class="col-md-10 ">
+            <div class="well">
+              <h3>Dashboard</h3>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="row">
+        <div class="container-fluid">
+          <div class="col-md-5 infoBox main">
+            <div class="well">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="page-header">
+                    <h4>Basic Info <span style="float:right"><i class="material-icons edit">mode_edit</i></span></h4>
+                  </div>
+                </div>
+                <div class="row mainBox">
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div class="col-md-5  infoBox">
-    <div class="well">
-      <div class="container-fluid">
-        <div class="row">
-    <div class="page-header">
-      <h4>Summary</h4>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-1 ">
-    <h5>Number of Tests Given</h5>
-  </div>
-  <div class="col-xs-2 col-xs-offset-1">
-    <h5 id="testNo"><strong>3</strong></h5>
-  </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-1 ">
-    <h5>Number of Practice Tests Given</h5>
-  </div>
-  <div class="col-xs-2 col-xs-offset-1">
-    <h5 id="pTestNo"><strong>5</strong></h5>
-  </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-1 ">
-    <h5>Best Rank</h5>
-  </div>
-  <div class="col-xs-2 col-xs-offset-1">
-    <h5 id="bestRank"><strong>34</strong></h5>
-  </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-1 ">
-    <h5>Best State Rank</h5>
-  </div>
-  <div class="col-xs-2 col-xs-offset-1">
-    <h5 id="bestStateRank"><strong>4</strong></h5>
-  </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-1 ">
-    <h5>Best Score</h5>
-  </div>
-  <div class="col-xs-2 col-xs-offset-1">
-    <h5 id="pBestScore"><strong>289</strong></h5>
-  </div>
-  </div>
+          <div class="col-md-5  infoBox side">
+            <div class="well">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="page-header">
+                    <h4>Summary</h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Number of Tests Given</h5>
+                  </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="testNo"><strong>3</strong></h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Number of Practice Tests Given</h5>
+                  </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="pTestNo"><strong>5</strong></h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Best Rank</h5>
+                  </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="bestRank"><strong>34</strong></h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Best State Rank</h5>
+                  </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="bestStateRank"><strong>4</strong></h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-8 col-xs-offset-1 ">
+                    <h5>Best Score</h5>
+                  </div>
+                  <div class="col-xs-2 col-xs-offset-1">
+                    <h5 id="pBestScore"><strong>289</strong></h5>
+                  </div>
+                </div>
 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+
     </div>
   </div>
-  </div>
-  </div>
-
-
-</div>
-</div>
 </body>
+
+<script src="../js/jquery.dropdown.js"></script>
+
+<script>
+$(".dropdown").hover(
+  function() {
+    $('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+    $(this).toggleClass('open');
+    $('b', this).toggleClass("caret caret-up");
+  },
+  function() {
+    $('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+    $(this).toggleClass('open');
+    $('b', this).toggleClass("caret caret-up");
+  }
+);
+
+var profileFields=['Name','Roll','Birthday','Class','City','School','Email','Contact'];
+
+$('ul li:not(#practice,#home)').click(function(){
+  $('.side,.head').slideUp();
+  $('.main').removeClass('col-md-5');
+  $('.main').addClass('col-md-10');
+  $('.mainBox').empty();
+});
+
+
+$('#home').click(function(){
+  $('.main').removeClass('col-md-10');
+  $('.main').addClass('col-md-5');
+  $('.side,.head').slideDown();
+  //call
+  name="Rahul";
+  $('.head h3').html("Hello , "+name);
+  $('.mainBox').empty();
+  $('.main .page-header h4').html('Basic Info <span style="float:right"><i class="material-icons edit">mode_edit</i></span>');
+  for(i=0;i<profileFields.length;i++){
+    if($.inArray(profileFields[i],['Birthday','Class'])!=-1)
+    continue;
+    var baseEle="<div class='row detail'><div class='col-xs-2 col-xs-offset-1'> <h5><strong>"+profileFields[i]+"</strong></h5> </div> <div class='col-xs-8 col-xs-offset-1 '> <h5 id="+profileFields[i].toLowerCase().replace(" ","_")+">value</h5> </div></div>";
+    $('.mainBox').append(baseEle);
+  }
+});
+
+$('#profile').click(function(){
+  $('.main .page-header h4').html('Info<span style="float:right"><i class="material-icons edit">mode_edit</i></span>');
+  for(i=0;i<profileFields.length;i++){
+    var baseEle="<div class='row detail'><div class='col-xs-2 col-xs-offset-1 col-md-offset-3'> <h5><strong>"+profileFields[i]+"</strong></h5> </div> <div class='col-xs-8 col-xs-offset-1 col-md-6'> <h5 id="+profileFields[i].toLowerCase().replace(" ","_")+">value</h5> </div></div>";
+    $('.mainBox').append(baseEle);
+  }
+});
+
+$('#samplePractice').click(function(){
+  $('.main .page-header h4').html('Sample Papers');
+  var form="<form class='form-inline' role='form'> <div class='form-group'> <label class='control-label col-md-2' for='class'>Class</label><div class='col-md-10'>  <select id='class' class='select form-control' required> <option value='5'>5</option> <option value='6'>6</option> <option value='7'>7</option> <option value='8'>8</option> <option value='9'>9</option> <option value='10'>10</option> <option value='11'>11</option> <option value='12'>12</option> </select> </div> </div> <button type='submit' class='btn btn-info btn-raised' id='samplePracticeSubmit'>Submit</button> </form>";
+  $('.mainBox').append("<div class='row'><div class='col-md-8 col-xs-10 col-md-offset-2 text-center '>"+form+"</div></div>");
+  $.material.init();
+  $(".select").dropdown({"optionClass": "withripple"});
+});
+
+
+$(document).on('click','#samplePracticeSubmit',function(){
+  $('.samplePracticeResults').empty();
+  var classNo=$('select#class option:selected').val();
+  //call to get results
+  var results=[
+    {
+      "name":"Problem Set 1",
+      "url":"../resources/pset1_"+classNo+".pdf"
+    },
+    {
+      "name":"Problem Set 1",
+      "url":"../resources/pset2_"+classNo+".pdf"
+    }
+  ];
+  var elementContainer="";
+  results.map(function(ele){
+    elementContainer += "<div class='col-xs-11 col-md-10 col-md-offset-1'><div class='col-xs-12'>"+ele.name+"</div><div class='col-xs-12'><a href="+ele.url+">Download</a></div></div>";
+  });
+  var samplePracticeResults = "<div class='row samplePracticeResults'><div class='container-fluid'>"+elementContainer+"</div></div>";
+  $('.mainBox').append(samplePracticeResults);
+});
+
+$(document).on('click','.edit',function(){
+  $('.side,.head').fadeOut();
+  $('.main').removeClass('col-md-5');
+  $('.main').addClass('col-md-10');
+  $('.mainBox').empty();
+  $('.main .page-header h4').html('Edit Details');
+  //call to get previous details
+  $('.mainBox').append("<div class='row'> <div class='col-md-8 col-md-offset-2'> <form role='form' class='form-horizontal'> <fieldset> <div class='form-group'> <label class='control-label col-md-2' for='name'>Name</label> <div class='col-md-10'> <input  class='form-control' id='name' required /> </div> </div> <div class='form-group'> <label class='control-label col-md-2' for='birthday'> Birthday</label> <div class='col-md-10'> <input type='date' class='form-control' id='birthday' required> </div> </div><div class='form-group'> <label  class='control-label col-md-2' for='class'>Class</label> <div class='col-md-10'> <select id='school' class='select form-control' data-dynamic-opts=true required> <option value='5'>5</option> <option value='6'>6</option> <option value='7'>7</option> <option value='8'>8</option> <option value='9'>9</option> <option value='10'>10</option> <option value='11'>11</option> <option value='12'>12</option> </select> </div> </div> <div class='form-group'> <label class='control-label col-md-2' for='email'> Email</label> <div class='col-md-10'> <input type='email' class='form-control' id='email' required> </div> </div> <div class='form-group'> <label class='control-label col-md-2' for='contact'> Contact</label> <div class='col-md-10'> <input type='text' class='form-control' id='contact' required> </div> </div> <div class='form-group'> <label class='control-label col-md-2' for='password'> Password</label> <div class='col-md-10'> <input type='password' class='form-control' id='password' required> </div> </div> <div class='form-group'> <label class='control-label col-md-2' for='confpassword'> Confirm Password</label> <div class='col-md-10'> <input type='password' class='form-control' id='confpassword' required> </div> </div> <div class='form-group'> <div class='col-md-8 col-md-offset-2 text-center'> <button type='submit' class='btn btn-info btn-raised'>Save Changes</button> </div> </div> </fieldset> </form> </div> </div>");
+  $.material.init();
+  $(".select").dropdown({"optionClass": "withripple"});
+
+  // $(".select").dropdown({"optionClass": "withripple"});
+});
+
+
+</script>
 </html>

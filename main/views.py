@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import *
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators.csrf import csrf_exempt
 
 def reg_school(request):
 	if request.method == 'POST':
@@ -64,46 +67,45 @@ def reg_st(request):
 	except:
 			pass
 
-	member = Student()	
+	student = Student()	
 	try:
-		member.user = User.objects.create_user(st_email)	
+		student.user = User.objects.create_user(st_email)	
 	except:
 		return render(request, main/errors.html)
-	member.user.save()
+	student.user.save()
 	
-	member.st_name = st_name
-	member.st_dob = st_dob
-	member.st_city_res = st_city_res
-	member.st_city_sc = st_city_sc
-	member.st_email = st_email
-	member.st_sc = st_sc
-	member.st_pass = st_pass
-	member.save()
+	student.st_name = st_name
+	student.st_dob = st_dob
+	student.st_city_res = st_city_res
+	student.st_city_sc = st_city_sc
+	student.st_email = st_email
+	student.st_sc = st_sc
+	student.st_pass = st_pass
+	student.save()
 
 	#algo for username and psswd to be written
 
-	def gen_username(request):
-		c_code = int(member.sc_city) 
-		d = []
-		today = datetime.date.today()
-		d.append(today)
-		year = d[0]
-		r_year = year[2:]
-		s_id = str(member.id)
-		u_name = "EM" + r_year + c_code + s_id
+def gen_username(request):
+	c_code = int(student.sc_city) 
+	d = []
+	today = datetime.date.today()
+	d.append(today)
+	year = d[0]
+	r_year = year[2:]
+	s_id = str(student.id)
+	u_name = "EM" + r_year + c_code + s_id
 
-		return(u_name)
+	return(u_name)
 
-	def gen_psswd(request):
-		psswd = str(member.sc_no)	
+def gen_psswd(request):
+	psswd = str(student.sc_no)	
 
-		return(psswd)
+	return(psswd)
 
-	def create_user(request):
-		user = School.objects.create_user(username=u_name, password=psswd, email_id=member.email_id)	
-		member.user = user
-		member.save()
-		return user
+def create_user(request):
+	student = User.objects.create_user(username=u_name, password=psswd, email_id=student.st_email)	
+	student.save()
+	return student
 
 	body = unicode(u'''
 		Hi whatever to be filled here to be done by the team
@@ -118,27 +120,67 @@ def reg_st(request):
 		except:
 			return HttpResponse('error')		
 
+@csrf_exempt
+def user_login(request):
+	if request.method == 'POST':
+		username = request.POST['username']
+		password = request.POST['password']
+		user = authenticate(username=username, password=password)
+		if user:
+			if user.is_active:
+					login(request, user)
+					return HttpResponseRedirect('../dashboard/',)
+			else:
+				response = {'error_heading' : "Account Inactive", 'error_message' :  'Your account is currently INACTIVE. To activate it, call the following members of the Department of Publications and Correspondence depending on the region of your college.<br> <strong> North India :- Ankit Dube | +91 9983083610 </strong> <br> <strong>Delhi/NCR :- Aditya Shetty :- +91 7240105157 </strong><br><strong>Central India :- Poonam Brar | +91 7240105158 </strong><br><strong>Rajasthan, Gujarat & Maharashtra :- Karthik Maddipoti | +91 8003193680 </strong><br><strong>East India :- Tanhya Chitle | +91 7240105155 </strong><br><strong>South India :- Archana Tatavarti |+91 7240105150 </strong><br />Return back <a href="/">home</a>'}
+				return JsonResponse(response)
+		else:
+			response = {'error_heading' : "Invalid Login Credentials", 'error_message' :  'Please'}
+			return JsonResponse(response)
+	else:
+		return render(request, 'registrations/login.html')	
+
+@login_required
+def user_logout(request):
+	user = request.user;
+	logout(request)					
+
+@login_required
 def sc_dashboard_simple(request):
-	response = {'name': School.sc_name,
-				'address': School.sc_add,
-				'city': School.city,
-				'state': School.state,
-				'email_id': School.email_id,
-				'phone_no': School.phone_no,
-				'princi_name': School.sc_princi,
-				'auth_name': School.sc_name,
+	school = School.objects.get(request.user.sc_email)
+
+	response = {'name': school.sc_name,
+				'address': school.sc_add,
+				'city': school.city,
+				'state': school.state,
+				'email_id': school.email_id,
+				'phone_no': school.phone_no,
+				'princi_name': school.sc_princi,
+				'auth_name': school.sc_name,
 	}
 	return JsonResponse(response)
 
+@login_required
 def sc_dashboard_file(request):
 	#to be written
 
+@login_required
 def sc_dashboard_payment(request):
-	#to be written
+	school = School.objects.get(request.user.sc_email)
 
+	if school.is_paid == True:
+		response={'message' = You have paid}
+
+	else:
+		response = {'message' = Kindly follow the link to make your payment }
+
+	return JsonResponse(response)	
+
+@login_required
 def sc_dashboard_status(request):
-	if School.enroll_sheet = null:
-		response = {'paid' = School.is_paid,
+	school = School.objects.get(request.user.sc_email)
+
+	if school.enroll_sheet = null:
+		response = {'paid' = school.is_paid,
 					'registered' = True,
 					'enroll_sheet': False,
 					'enroll_aknowledge': #pata nahi bc,
@@ -146,7 +188,7 @@ def sc_dashboard_status(request):
 					'exam_conduct': #to be asked,
 		}	
 	else:
-		response = {'paid' = School.is_paid,
+		response = {'paid' = school.is_paid,
 					'registered' = True,
 					'enroll_sheet': True,
 					'enroll_aknowledge': #pata nahi bc,
@@ -155,6 +197,7 @@ def sc_dashboard_status(request):
 		}			
 	return JsonResponse(response)	
 
+@login_required
 def sc_dashboard_roll(request):
 	#if roll numbers not generated:
 	response = {'status' = 0,
@@ -166,6 +209,7 @@ def sc_dashboard_roll(request):
 	#}
  	return JsonResponse(response)
 
+@login_required
 def sc_edit(request):
 	if request.method == 'POST':
 		sc_add = request.POST['sc_add']
